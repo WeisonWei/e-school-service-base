@@ -1,0 +1,10 @@
+= Getting Started With Spring REST Docs
+
+This is an document output for a service running at http://msb-ai.meixiu.mobi/ai-pm/
+
+include::{snippets}/asciidoc/overview.adoc[]
+include::{snippets}/asciidoc/paths.adoc[]
+include::{snippets}/asciidoc/security.adoc[]
+include::{snippets}/asciidoc/definitions.adoc[]
+
+
