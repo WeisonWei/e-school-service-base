@@ -9,8 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
+    <groupId>com.es</groupId>
     <artifactId>e-school-service-base</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <name>e-school-service-base</name>
 
     <properties>
         <java.version>1.8</java.version>
