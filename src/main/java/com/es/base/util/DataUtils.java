@@ -17,7 +17,7 @@ public class DataUtils {
     public static final Random random = new Random();
     public static final DataFactory dataFactory = new DataFactory();
 
-    public static <T> T mockObj(final Class<T> type) throws Exception {
+    public static <T> T mockObject(final Class<T> type) throws Exception {
         T obj = type.getDeclaredConstructor().newInstance();
         ClassUtils.getAllFieldList(type)
                 .stream()
@@ -33,7 +33,7 @@ public class DataUtils {
         return dataFactory.getRandomText(10, 20);
     }
 
-    public static Integer mockInt() {
+    public static Integer mockInteger() {
         return dataFactory.getNumberBetween(1, 10);
     }
 
@@ -58,28 +58,28 @@ public class DataUtils {
     }
 
     public static <T> List<T> mockList(final Class<T> type) throws Exception {
-        return Arrays.asList(mockObj(type), mockObj(type));
+        return Arrays.asList(mockObject(type), mockObject(type));
     }
 
     public static <T> List<T> mockList(final Class<T> type, int num) throws Exception {
         List list = new ArrayList(num);
         for (int i=0; i< num; i++) {
-            list.add(mockObj(type));
+            list.add(mockObject(type));
         }
         return list;
     }
 
-    public static <T> Page<T> mockPage() throws Exception {
+    public static <T> Page<T> mockPageable() throws Exception {
         List<T> list = Arrays.asList();
         return PageableExecutionUtils.getPage(list, PageRequest.of(0, 10), list::size);
     }
 
-    public static <T> Page<T> mockPage(final Class<T> type) throws Exception {
-        List<T> list = Arrays.asList(mockObj(type), mockObj(type));
+    public static <T> Page<T> mockPageable(final Class<T> type) throws Exception {
+        List<T> list = Arrays.asList(mockObject(type), mockObject(type));
         return PageableExecutionUtils.getPage(list, PageRequest.of(0, 10), list::size);
     }
 
-    public static <T> Page<T> mockPage(final Class<T> type, int num) throws Exception {
+    public static <T> Page<T> mockPageable(final Class<T> type, int num) throws Exception {
         List<T> list = mockList(type, num);
         return PageableExecutionUtils.getPage(list, PageRequest.of(0, 10), list::size);
     }

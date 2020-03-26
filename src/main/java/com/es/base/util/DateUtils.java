@@ -57,9 +57,8 @@ public class DateUtils {
         return now.equals(dateStr);
     }
 
-
     public static Long getTodayMill() {
-        LocalDateTime today = LocalDateTime.now().withHour(00).withMinute(00).withSecond(00);
+        LocalDateTime today = LocalDateTime.now().withHour(0).withMinute(0).withSecond(0).withNano(0);
         long milli = today.toInstant(ZoneOffset.of("+8")).toEpochMilli();
         return milli;
     }
@@ -77,6 +76,5 @@ public class DateUtils {
         long milli = firstDay.toInstant(ZoneOffset.of("+8")).toEpochMilli();
         return milli;
     }
-
 
 }
